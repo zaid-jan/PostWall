@@ -1,20 +1,22 @@
+/* eslint-disable linebreak-style */
 function post(event) {
     const { id, text } = event;
-    if(text === ''){
+    if (text === '') {
         return {
-            type:'EmptyField',
-        }
+            'type': 'EmptyField'
+        };
     }
-    else{
-        document.getElementById(id).value = '';
-        return{
-            type:'FormSubmitted',
-            payload: text,
-        }
-    }
-   
-}
 
-module.exports = {
-    post,
-}
+        document.getElementById(id).value = '';
+
+    return {
+                'payload': text,
+                'type': 'FormSubmitted'
+            };
+
+
+    }
+
+export default {
+    post
+};
