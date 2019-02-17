@@ -26,6 +26,7 @@ class Wall extends Component {
                     <div className="designation">
                         {data.designation}
                     </div>
+                    <hr></hr>
                     <div className="text">
                         {data.text}
                         <button

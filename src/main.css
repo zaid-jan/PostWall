@@ -1,3 +1,7 @@
+.main {
+    margin-left: 120px;
+    margin-right: 120px;
+}
 #postBarButton {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -33,7 +37,7 @@ textarea {
 }
 
 .text {
-	color: #424141;
+	color: #0c0c0c;
 	font-size: 20px;
 	line-height: 20px;
 	font-weight: normal;
@@ -50,7 +54,7 @@ textarea {
 }
 
 .designation {
-	color: #635d5d;
+	color: #ffffff;
 	font-size: 15px;
 	line-height: 20px;
 	font-weight: normal;
@@ -59,7 +63,7 @@ textarea {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: rgb(34, 172, 172);
+    background-color: rgb(221, 221, 221);
     transition: 0.3s;
     padding: 15px 32px;
     margin-top: 25px; 
@@ -90,7 +94,7 @@ textarea {
     background-color: rgb(255, 255, 255);
     transition: 0.3s;
     padding: 15px 32px;
-    margin-top: 25px; 
+    margin-top: 10px; 
     margin-bottom: 0px;
     margin-left: 10px;
     margin-right: 10px;

@@ -7,7 +7,7 @@ import Wall from './Wall';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='main'>
         <PostBar />
         <Wall />
       </div>
