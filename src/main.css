@@ -11,10 +11,50 @@
     margin-left: 10px;
     margin-right: 10px;
 } 
+
+.likeButton {
+    background-color: rgb(144, 165, 235);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 12px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 10px;
+}
+
 textarea {
     margin-left: 10px;
     margin-right: 10px;
     width: 98%;
+}
+
+.text {
+	color: #424141;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: normal;
+    font-family: 'Orienta', sans-serif;
+    margin-top: 5px;
+}
+
+.user {
+    color: #000000;
+	font-size: 15px;
+	line-height: 20px;
+	font-weight: normal;
+	font-family: 'Orienta', sans-serif;
+}
+
+.designation {
+	color: #635d5d;
+	font-size: 15px;
+	line-height: 20px;
+	font-weight: normal;
+	font-family: 'Orienta', sans-serif;
 }
 
 .card {
@@ -26,7 +66,11 @@ textarea {
     margin-left: 10px;
     margin-right: 10px;
 }
-  .card:hover {
+.card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
  }
-  
+ 
+ hr {
+    color: #635d5d;
+ }
+  /* Style the image inside the centered container, if needed */

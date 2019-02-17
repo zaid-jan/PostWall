@@ -30,6 +30,7 @@ class PostBar extends Component {
                 </textarea>
                 <br></br>
                 <button id="postBarButton"
+                    // eslint-disable-next-line object-property-newline
                     onClick={() => this.props.post({ 'id': 'text', 'text': this.text })}
                     name="button"
                     type="submit">

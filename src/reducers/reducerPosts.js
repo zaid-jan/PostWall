@@ -1,3 +1,5 @@
+// eslint-disable-next-line linebreak-style
+/* eslint-disable key-spacing */
 /* eslint-disable linebreak-style */
 // eslint-disable-next-line linebreak-style
 /* eslint-disable no-case-declarations */
@@ -7,28 +9,62 @@ export default function posts(state, action) {
     if (state == 'undefined') {
         return {};
     }
-    // console.log("Action type", action.type)
+    console.log("Action type", action.type)
     switch (action.type) {
         case 'FormSubmitted':
-            const newState = [];
-            let j = 0;
-            newState[j] = {
-                'id': j,
-                'text': action.payload
-            };
-            j += 1;
-            for (let i = state.length - 1; i >= 0; i -= 1) {
-                newState[j] = {
-                    'id': j,
-                    'text': state[i].text
-                };
-                j += 1;
-            }
-
-return newState;
+            return handleSubmit(state, action);
         case 'EmptyField':
             return state;
+        case 'LikeCLicked':
+            return handleLike(state, action);
         default:
             return [];
     }
+}
+
+function handleLike(state, action) {
+    let newState = state.map((post) => {
+        return post;
+    })
+    const id = action.payload;
+    let index = newState.findIndex(obj => {
+        return obj.id == id
+    })
+    if(index === -1){
+        return state
+    }
+    else{
+        if(newState[index].userLiked == true) {
+            newState[index].likes -= 1;
+            newState[index].userLiked = !newState[index].userLiked;
+        }
+        else {
+            newState[index].likes += 1;
+            newState[index].userLiked = !newState[index].userLike
+        }
+    }
+    console.log('newState', newState)
+    return newState;
+}
+
+function handleSubmit(state, action) {
+    let newState = [];
+    const defaults = {
+        'name' : 'Zaid Jan',
+        'designation' : 'Student of Computer Science, Taking It One Day At a Time',
+        'img' : '../imgs/user.png',
+    };
+    let j = 0;
+    newState = state.map((post) => {
+        j += 1;
+        return post;
+    })
+    newState[j] = {
+        'id': j,
+        'text': action.payload,
+        'userLiked': false,
+        'likes': 0,
+        ...defaults
+    };
+    return newState;
 }
