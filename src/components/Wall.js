@@ -36,7 +36,7 @@ class Wall extends Component {
                             className="likeButton" 
                             onClick={this.props.like} 
                             style={{float: 'right'}} 
-                            type="button">Like ({data.likes})
+                            type="button">{data.userLiked ? 'Unlike' : 'Like'} ({data.likes})
                         </button>
                     </div>
                     <hr></hr>
