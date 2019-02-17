@@ -1,23 +1,29 @@
 export default function posts(state, action) {
-    if(state == 'undefined'){
-        return {}
+    if (state == 'undefined') {
+        return {};
     }
-    console.log("Action type", action.type)
-    switch(action.type){    
+    // console.log("Action type", action.type)
+    switch (action.type) {
         case 'FormSubmitted':
-            let newState = [];
-            let j=0;
-            newState[j] = action.payload;
+            const newState = [];
+            let j = 0;
+            newState[j] = {
+                'text': action.payload,
+                'id': j
+            };
             j += 1;
-            for(let i = state.length-1; i >= 0; i -= 1){
-                newState[j] = state[i]
+            for (let i = state.length - 1; i >= 0; i -= 1) {
+                newState[j] = {
+                    'text': state[i].text,
+                    'id': j
+                };
                 j += 1;
-            }            
-            console.log("new State", newState);
-            return newState;  
+            }
+
+return newState;
         case 'EmptyField':
-            return state;        
+            return state;
         default:
-            return [];       
+            return [];
     }
-}      
+}

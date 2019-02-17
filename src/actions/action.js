@@ -1,15 +1,15 @@
-function post(data) {
-    var temp = document.getElementById('text').value;
-    if(temp === ''){
+function post(event) {
+    const { id, text } = event;
+    if(text === ''){
         return {
             type:'EmptyField',
         }
     }
     else{
-        document.getElementById('text').value ='';
+        document.getElementById(id).value = '';
         return{
             type:'FormSubmitted',
-            payload: temp,
+            payload: text,
         }
     }
    

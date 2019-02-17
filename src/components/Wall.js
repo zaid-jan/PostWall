@@ -9,10 +9,14 @@ class Wall extends Component {
         arr = this.props.post;
         // let arr = this.props.post;
         const list = arr.map((data) => {
-            console.log(data)
             return (
-                <div className="card">
-                    {data}
+                <div key={data.id}>
+                    <div className="card">
+                        {data.text}
+                    </div>
+                    <div className='bottomBar'>
+                        {data.likes}
+                    </div>
                 </div>
             )
         })
