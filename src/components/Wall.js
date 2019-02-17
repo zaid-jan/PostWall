@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import '../main.css';
-import Comments from './Comments'
-import action from '../actions/action'
+import Comments from './Comments';
+import action from '../actions/action';
 
 class Wall extends Component {
 
@@ -13,36 +13,32 @@ class Wall extends Component {
         super();
         this.makeList = this.makeList.bind(this);
     }
+
     makeList() {
         let arr = [];
         arr = this.props.post;
         // let arr = this.props.post;
-        console.log("show props", this.props.post)
         const list = arr.map(data => (
                 <div key={data.id} className="card">
-                    {/* <div className="img">
-                       <img src={data.img} height="20" width="20"></img>
-                    </div> */}
                     <div className="user">
-                        {data.name}
+                        <b>{data.name}</b>
                     </div>
                     <div className="designation">
                         {data.designation}
                     </div>
                     <div className="text">
                         {data.text}
-                        <button 
-                            compid={data.id} 
-                            className="likeButton" 
-                            onClick={this.props.like} 
-                            style={{float: 'right'}} 
+                        <button
+                            compid={data.id}
+                            className="likeButton"
+                            onClick={this.props.like}
+                            style={{ 'float': 'right' }}
                             type="button">{data.userLiked ? 'Unlike' : 'Like'} ({data.likes})
                         </button>
                     </div>
                     <hr></hr>
                     <div className="comments">
-                        <Comments data={data.comment}/>
-                        {data.comments}
+                        <Comments data={data}/>
                     </div>
                 </div>
             ));
@@ -52,8 +48,8 @@ class Wall extends Component {
 
     render() {
         const comp = this.makeList();
-        console.log("rendered")
-        return (
+        
+return (
                 <div>
                     {comp}
                 </div>

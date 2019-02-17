@@ -59,6 +59,7 @@ textarea {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgb(34, 172, 172);
     transition: 0.3s;
     padding: 15px 32px;
     margin-top: 25px; 
@@ -70,6 +71,32 @@ textarea {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
  }
  
+.commentsButton {
+    background-color: rgb(144, 165, 235); /* Green */
+    border: none;
+    color: white;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 12px;
+    border-radius: 8px;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+
+.comment {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+    padding: 15px 32px;
+    margin-top: 25px; 
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
  hr {
     color: #635d5d;
  }

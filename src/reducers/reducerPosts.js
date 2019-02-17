@@ -17,9 +17,28 @@ export default function posts(state, action) {
             return state;
         case 'LikeCLicked':
             return handleLike(state, action);
+        case 'CommentAdded':
+            return handleComment(state, action);
         default:
             return [];
     }
+}
+
+function handleComment(state, action) {
+    const { id, text } = action.payload;
+    let newState = state.map((post) => {
+        return post;
+    })
+    let index = newState.findIndex(obj => {
+        return obj.id == id
+    })
+    // console.log(newState[index].comments.size())
+    newState[index].comments[newState[index].comments.length] = text;
+    console.log("Obj", newState[index])
+
+    return newState;
+    // console.log(id, text)
+    
 }
 
 function handleLike(state, action) {
@@ -64,6 +83,7 @@ function handleSubmit(state, action) {
         'text': action.payload,
         'userLiked': false,
         'likes': 0,
+        'comments':[],
         ...defaults
     };
     return newState;
